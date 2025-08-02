@@ -7,9 +7,9 @@ I've successfully created a comprehensive, interactive fraud analysis dashboard 
 ## 🎯 Key Features Implemented
 
 ### 📈 Interactive Charts & Visualizations
-1. **Fraud Status Distribution** - Doughnut chart showing breakdown of all application statuses
+1. **Fraud Status Distribution (%)** - Doughnut chart showing percentage breakdown of all application statuses
 2. **Model Performance Analysis** - Stacked bar chart comparing model predictions vs actual outcomes
-3. **Monthly Trends** - Line chart showing fraud patterns over time (Jan-Mar 2025)
+3. **Monthly Application Volume & Fraud Rate** - Combo chart showing total applications (bars) and fraud rate % (line) by month
 4. **Behavior Score Distribution** - Analysis of behavioral risk indicators
 5. **Device Score Distribution** - Device fingerprinting risk analysis
 6. **Daily Volume Trends** - Combined chart showing application volume and fraud detection rates

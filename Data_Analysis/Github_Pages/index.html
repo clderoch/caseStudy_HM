@@ -181,7 +181,7 @@
             <div class="charts-grid">
                 <!-- Fraud Status Distribution -->
                 <div class="chart-container">
-                    <h3 class="chart-title">Fraud Status Distribution</h3>
+                    <h3 class="chart-title">Fraud Status Distribution (%)</h3>
                     <div class="chart-wrapper">
                         <canvas id="fraudStatusChart"></canvas>
                     </div>
@@ -197,7 +197,7 @@
 
                 <!-- Monthly Trends -->
                 <div class="chart-container full-width">
-                    <h3 class="chart-title">Monthly Fraud Trends</h3>
+                    <h3 class="chart-title">Monthly Application Volume & Fraud Rate</h3>
                     <div class="chart-wrapper">
                         <canvas id="monthlyTrendsChart"></canvas>
                     </div>
@@ -330,12 +330,16 @@
                 });
             });
 
+            // Calculate total and percentages
+            const total = Object.values(statusTotals).reduce((sum, count) => sum + count, 0);
+            const percentages = Object.values(statusTotals).map(count => ((count / total) * 100).toFixed(1));
+
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: Object.keys(statusTotals).map(key => key.replace('_', ' ')),
                     datasets: [{
-                        data: Object.values(statusTotals),
+                        data: percentages,
                         backgroundColor: [
                             colors.success,
                             colors.danger,
@@ -354,6 +358,16 @@
                     plugins: {
                         legend: {
                             position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    const count = Object.values(statusTotals)[context.dataIndex];
+                                    return `${label}: ${value}% (${count.toLocaleString()} cases)`;
+                                }
+                            }
                         }
                     }
                 }
@@ -413,47 +427,113 @@
             const ctx = document.getElementById('monthlyTrendsChart').getContext('2d');
             
             const labels = data.monthly_trends.map(item => item.month);
-            const datasets = [
-                {
-                    label: 'Pass',
-                    data: data.monthly_trends.map(item => item.Pass),
-                    borderColor: colors.success,
-                    backgroundColor: colors.success + '20',
-                    fill: true
-                },
-                {
-                    label: 'Confirmed Fraud',
-                    data: data.monthly_trends.map(item => item.Confirmed_Fraud),
-                    borderColor: colors.danger,
-                    backgroundColor: colors.danger + '20',
-                    fill: true
-                },
-                {
-                    label: 'Manual Review',
-                    data: data.monthly_trends.map(item => item.Manual_Review + item.Manual_Review_No_Case),
-                    borderColor: colors.warning,
-                    backgroundColor: colors.warning + '20',
-                    fill: true
-                }
-            ];
+            
+            // Calculate total applications per month
+            const totalApplications = data.monthly_trends.map(item => 
+                item.Pass + item.Fail + item.Confirmed_Fraud + 
+                item.Manual_Review + item.Manual_Review_No_Case + item.False_Positive
+            );
+            
+            // Calculate fraud rate per month (confirmed fraud / total * 100)
+            const fraudRates = data.monthly_trends.map(item => {
+                const total = item.Pass + item.Fail + item.Confirmed_Fraud + 
+                            item.Manual_Review + item.Manual_Review_No_Case + item.False_Positive;
+                return total > 0 ? ((item.Confirmed_Fraud / total) * 100).toFixed(2) : 0;
+            });
 
             new Chart(ctx, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: labels,
-                    datasets: datasets
+                    datasets: [
+                        {
+                            label: 'Total Applications',
+                            data: totalApplications,
+                            backgroundColor: colors.primary + '80',
+                            borderColor: colors.primary,
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Fraud Rate (%)',
+                            data: fraudRates,
+                            type: 'line',
+                            borderColor: colors.danger,
+                            backgroundColor: colors.danger + '20',
+                            borderWidth: 3,
+                            fill: false,
+                            tension: 0.4,
+                            pointBackgroundColor: colors.danger,
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6,
+                            yAxisID: 'y1'
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Total Applications',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                drawOnChartArea: true,
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            beginAtZero: true,
+                            max: Math.max(...fraudRates) * 1.2, // Add some padding above max value
+                            title: {
+                                display: true,
+                                text: 'Fraud Rate (%)',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                drawOnChartArea: false,
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Month',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
                         }
                     },
                     interaction: {
                         intersect: false,
                         mode: 'index'
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    if (context.datasetIndex === 0) {
+                                        return `Applications: ${context.parsed.y.toLocaleString()}`;
+                                    } else {
+                                        return `Fraud Rate: ${context.parsed.y}%`;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             });
