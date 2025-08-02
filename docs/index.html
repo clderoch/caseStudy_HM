@@ -281,6 +281,15 @@
                         <div class="stat-icon" style="background: var(--warning-color);">👥</div>
                     </div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div>
+                            <div class="stat-number" id="false-positive-rate" style="color: var(--purple);">-</div>
+                            <div class="stat-label">False Positive Rate</div>
+                        </div>
+                        <div class="stat-icon" style="background: var(--purple);">⚠️</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Charts -->
@@ -471,6 +480,7 @@
             document.getElementById('fraud-rate').textContent = summary.fraud_rate + '%';
             document.getElementById('pass-rate').textContent = summary.pass_rate + '%';
             document.getElementById('review-rate').textContent = summary.manual_review_rate + '%';
+            document.getElementById('false-positive-rate').textContent = summary.false_positive_rate + '%';
         }
 
         function createAllCharts(data) {
