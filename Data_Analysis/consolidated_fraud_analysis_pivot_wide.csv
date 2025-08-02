@@ -1,0 +1,6 @@
+FRAUD_MODEL_RESULT,Confirmed Fraud,Fail,False Positive,Manual Review,Manual Review No Case,Pass,Total_Applications
+fraud_decline,0,56,0,0,0,0,56
+fraud_pass,2681,0,16,3,0,21548,24248
+fraud_reject,5,2982,0,0,0,0,2987
+fraud_review,114,0,486,596,0,28,1224
+fraud_review_no_case,5,162,11,2,15349,1,15530

@@ -1,0 +1,8 @@
+Metric,Value
+Total Records,"46,258"
+Records with Fraud Model Result,"44,045"
+Records with NULL Fraud Model Result,"2,213"
+Data Completeness Rate (%),95.22%
+Records in Current Pivot Analysis,"44,045"
+Records Excluded from Pivot Analysis,"2,213"
+Confirmed Fraud with fraud_pass (Data Quality Issue),"2,681"

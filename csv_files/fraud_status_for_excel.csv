@@ -1,0 +1,7 @@
+Fraud_Status,Application_Count,Percentage
+Pass,21751,47.02
+Manual Review No Case,17387,37.59
+Fail,3201,6.92
+Confirmed Fraud,2805,6.06
+Manual Review,601,1.3
+False Positive,513,1.11

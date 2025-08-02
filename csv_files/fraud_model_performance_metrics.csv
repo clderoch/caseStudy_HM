@@ -1,0 +1,6 @@
+Fraud_Model_Result,Total_Applications,Confirmed_Fraud_Cases,False_Positive_Cases,Precision_%,Fraud_Rate_%,False_Positive_Rate_%
+fraud_decline,56,0,0,0.0,0.0,0.0
+fraud_pass,24248,2681,16,99.41,11.06,0.07
+fraud_reject,2987,5,0,100.0,0.17,0.0
+fraud_review,1224,114,486,19.0,9.31,39.71
+fraud_review_no_case,15530,5,11,31.25,0.03,0.07

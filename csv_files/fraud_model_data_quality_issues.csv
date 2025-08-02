@@ -1,0 +1,3 @@
+Issue_Type,Description,Count,Percentage_of_Total,Potential_Impact
+Confirmed Fraud with fraud_pass,Cases marked as Confirmed Fraud but model result is fraud_pass,2681,5.8,False negatives or data collection timing issues
+Missing Fraud Model Result,Applications with no fraud model result,2213,4.78,Incomplete fraud screening or system bypass

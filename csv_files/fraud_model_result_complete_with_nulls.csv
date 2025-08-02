@@ -1,0 +1,21 @@
+FRAUD_MODEL_RESULT,FRAUD_STATUS,APPLICATION_COUNT
+fraud_decline,Fail,56
+fraud_pass,Confirmed Fraud,2681
+fraud_pass,False Positive,16
+fraud_pass,Manual Review,3
+fraud_pass,Pass,21548
+fraud_reject,Confirmed Fraud,5
+fraud_reject,Fail,2982
+fraud_review,Confirmed Fraud,114
+fraud_review,False Positive,486
+fraud_review,Manual Review,596
+fraud_review,Pass,28
+fraud_review_no_case,Confirmed Fraud,5
+fraud_review_no_case,Fail,162
+fraud_review_no_case,False Positive,11
+fraud_review_no_case,Manual Review,2
+fraud_review_no_case,Manual Review No Case,15349
+fraud_review_no_case,Pass,1
+NULL/MISSING,Fail,1
+NULL/MISSING,Manual Review No Case,2038
+NULL/MISSING,Pass,174

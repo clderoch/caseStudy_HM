@@ -1,0 +1,4 @@
+Fraud_Status,Count_Missing_Fraud_Model_Result,Percentage_of_Missing_Records,Percentage_of_Total_Dataset
+Pass,174,7.86,0.38
+Manual Review No Case,2038,92.09,4.41
+Fail,1,0.05,0.0

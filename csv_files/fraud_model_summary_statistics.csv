@@ -1,0 +1,6 @@
+Fraud_Model_Result,Total_Applications,Percentage_of_All_Apps,Confirmed_Fraud,False_Positive,Pass,Manual_Review,Manual_Review_No_Case,Fail,Fraud_Detection_Accuracy_%
+fraud_decline,56,0.12,0,0,0,0,0,56,N/A
+fraud_pass,24248,52.42,2681,16,21548,3,0,0,99.41
+fraud_reject,2987,6.46,5,0,0,0,0,2982,100.0
+fraud_review,1224,2.65,114,486,28,596,0,0,19.0
+fraud_review_no_case,15530,33.57,5,11,1,2,15349,162,31.25

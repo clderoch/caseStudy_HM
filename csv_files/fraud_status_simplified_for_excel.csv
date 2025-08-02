@@ -1,0 +1,6 @@
+Fraud_Status,Application_Count,Percentage
+Legitimate (Pass),21751,47.02
+Manual Review,17988,38.89
+Rejected (Fail),3201,6.92
+Confirmed Fraud,2805,6.06
+False Positive,513,1.11

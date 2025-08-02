@@ -1,0 +1,4 @@
+Month,Total_Apps,Confirmed_Fraud,False_Positives,Pass,Manual_Review,Fraud_Rate_%,FP_Rate_%,CF_vs_FP_Ratio
+2025-01,7423,30,124,5084,2144,0.4,1.67,0.24
+2025-02,10225,51,207,7754,2131,0.5,2.02,0.25
+2025-03,28610,2724,182,8913,13713,9.52,0.64,14.97
