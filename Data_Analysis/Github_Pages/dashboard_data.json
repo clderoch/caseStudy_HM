@@ -1017,34 +1017,86 @@
   "model_accuracy": [
     {
       "model_result": "fraud_pass",
-      "accuracy": 88.9,
-      "total_cases": 24248
+      "accuracy": 99.4,
+      "total_cases": 21739
     },
     {
-      "model_result": "fraud_reject",
-      "accuracy": 99.8,
-      "total_cases": 2987
+      "model_result": "fraud_fail",
+      "accuracy": 95.2,
+      "total_cases": 8163
     },
     {
-      "model_result": "fraud_review_no_case",
-      "accuracy": 50.0,
-      "total_cases": 15530
+      "model_result": "manual_review",
+      "accuracy": 87.3,
+      "total_cases": 14892
     },
     {
-      "model_result": "fraud_review",
-      "accuracy": 58.0,
-      "total_cases": 1224
+      "model_result": "confirmed_fraud",
+      "accuracy": 100.0,
+      "total_cases": 2804
     },
     {
-      "model_result": "fraud_decline",
-      "accuracy": 50.0,
-      "total_cases": 56
+      "model_result": "false_positive",
+      "accuracy": 0.0,
+      "total_cases": 513
     }
   ],
-  "daily_fraud_detailed": [
+  "risk_score_analysis": [
     {
-      "date": "2025-01-01",
-      "fraud_rate": 0.0,
-      "rolling_avg": 0.0,
-      "total_applications": 1,
-      "confirmed_fraud": 
+      "fraud_status": "Pass",
+      "behavior_score": 2.4,
+      "device_score": 26.4,
+      "count": 21739
+    },
+    {
+      "fraud_status": "False Positive",
+      "behavior_score": 6.0,
+      "device_score": 26.6,
+      "count": 513
+    },
+    {
+      "fraud_status": "Manual Review",
+      "behavior_score": 7.4,
+      "device_score": 26.8,
+      "count": 11635
+    },
+    {
+      "fraud_status": "Manual Review No Case",
+      "behavior_score": 19.1,
+      "device_score": 27.5,
+      "count": 3257
+    },
+    {
+      "fraud_status": "Confirmed Fraud",
+      "behavior_score": 47.9,
+      "device_score": 39.4,
+      "count": 2804
+    },
+    {
+      "fraud_status": "Fail",
+      "behavior_score": 83.0,
+      "device_score": 61.7,
+      "count": 6310
+    }
+  ],
+  "fraud_vs_false_positive": [
+    {
+      "month": "2025-01",
+      "confirmed_fraud": 30,
+      "false_positive": 124,
+      "precision": 19.5
+    },
+    {
+      "month": "2025-02",
+      "confirmed_fraud": 51,
+      "false_positive": 207,
+      "precision": 19.8
+    },
+    {
+      "month": "2025-03",
+      "confirmed_fraud": 2724,
+      "false_positive": 182,
+      "precision": 93.7
+    }
+  ]
+}
