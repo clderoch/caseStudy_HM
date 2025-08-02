@@ -250,6 +250,30 @@
                         <canvas id="scoreCorrelationChart"></canvas>
                     </div>
                 </div>
+
+                <!-- Model Accuracy Analysis -->
+                <div class="chart-container">
+                    <h3 class="chart-title">Model Prediction Accuracy</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="modelAccuracyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Risk Score Analysis -->
+                <div class="chart-container">
+                    <h3 class="chart-title">Average Risk Scores by Fraud Status</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="riskScoreAnalysisChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Fraud vs False Positive Trends -->
+                <div class="chart-container full-width">
+                    <h3 class="chart-title">Monthly Fraud Detection vs False Positives</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="fraudVsFalsePositiveChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -302,6 +326,9 @@
                 createFraudReasonsChart(data);
                 createIspFraudChart(data);
                 createScoreCorrelationChart(data);
+                createModelAccuracyChart(data);
+                createRiskScoreAnalysisChart(data);
+                createFraudVsFalsePositiveChart(data);
                 
             } catch (error) {
                 console.error('Error loading dashboard:', error);
@@ -789,6 +816,190 @@
                             title: {
                                 display: true,
                                 text: 'Score Range'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createModelAccuracyChart(data) {
+            const ctx = document.getElementById('modelAccuracyChart').getContext('2d');
+            
+            if (!data.model_accuracy || data.model_accuracy.length === 0) {
+                return;
+            }
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.model_accuracy.map(item => item.model_result.replace('_', ' ')),
+                    datasets: [{
+                        label: 'Accuracy (%)',
+                        data: data.model_accuracy.map(item => item.accuracy),
+                        backgroundColor: data.model_accuracy.map(item => {
+                            if (item.accuracy >= 90) return colors.success;
+                            if (item.accuracy >= 70) return colors.warning;
+                            return colors.danger;
+                        }),
+                        borderColor: colors.dark,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Accuracy (%)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const accuracy = context.parsed.y;
+                                    const totalCases = data.model_accuracy[context.dataIndex].total_cases;
+                                    return `Total Cases: ${totalCases.toLocaleString()}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createRiskScoreAnalysisChart(data) {
+            const ctx = document.getElementById('riskScoreAnalysisChart').getContext('2d');
+            
+            // Create sample risk score data based on notebook findings
+            const riskScoreData = [
+                { fraud_status: 'Pass', behavior_score: 2.4, device_score: 26.4 },
+                { fraud_status: 'False Positive', behavior_score: 6.0, device_score: 26.6 },
+                { fraud_status: 'Manual Review', behavior_score: 7.4, device_score: 26.8 },
+                { fraud_status: 'Manual Review No Case', behavior_score: 19.1, device_score: 27.5 },
+                { fraud_status: 'Confirmed Fraud', behavior_score: 47.9, device_score: 39.4 },
+                { fraud_status: 'Fail', behavior_score: 83.0, device_score: 61.7 }
+            ];
+
+            const labels = riskScoreData.map(item => item.fraud_status);
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Behavior Score',
+                            data: riskScoreData.map(item => item.behavior_score),
+                            backgroundColor: colors.primary,
+                            borderColor: colors.secondary,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Device Score',
+                            data: riskScoreData.map(item => item.device_score),
+                            backgroundColor: colors.teal,
+                            borderColor: colors.dark,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Risk Score'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                afterBody: function() {
+                                    return 'Higher scores indicate higher risk';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createFraudVsFalsePositiveChart(data) {
+            const ctx = document.getElementById('fraudVsFalsePositiveChart').getContext('2d');
+            
+            // Create sample data based on monthly trends
+            const fraudVsFpData = [
+                { month: '2025-01', confirmed_fraud: 30, false_positive: 124 },
+                { month: '2025-02', confirmed_fraud: 51, false_positive: 207 },
+                { month: '2025-03', confirmed_fraud: 2724, false_positive: 182 }
+            ];
+
+            const labels = fraudVsFpData.map(item => item.month);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Confirmed Fraud',
+                            data: fraudVsFpData.map(item => item.confirmed_fraud),
+                            backgroundColor: colors.danger,
+                            borderColor: colors.dark,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'False Positives',
+                            data: fraudVsFpData.map(item => item.false_positive),
+                            backgroundColor: colors.warning,
+                            borderColor: colors.dark,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Cases'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Month'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                footer: function(tooltipItems) {
+                                    const monthData = fraudVsFpData[tooltipItems[0].dataIndex];
+                                    const precision = (monthData.confirmed_fraud / (monthData.confirmed_fraud + monthData.false_positive) * 100).toFixed(1);
+                                    return `Precision: ${precision}%`;
+                                }
                             }
                         }
                     }
