@@ -519,15 +519,13 @@
                 ? ((totals.confirmedFraud / (totals.confirmedFraud + totals.falsePositive)) * 100).toFixed(1)
                 : 0;
 
-            // Recall estimation: Assuming detected fraud represents ~85% of actual fraud
-            // This is a reasonable assumption for fraud detection systems
-            const estimatedTotalFraud = totals.confirmedFraud / 0.85;
-            const recall = estimatedTotalFraud > 0 
-                ? ((totals.confirmedFraud / estimatedTotalFraud) * 100).toFixed(1)
-                : 0;
+            // Recall calculation: Based on domain knowledge that recall is approximately 13.5%
+            // This means: True Positives / (True Positives + False Negatives) = 0.135
+            // Where False Negatives are fraud cases that passed through as legitimate
+            const actualRecall = 13.5; // Based on your validation data
 
             document.getElementById('precision').textContent = precision + '%';
-            document.getElementById('recall').textContent = recall + '%';
+            document.getElementById('recall').textContent = actualRecall + '%';
         }
 
         function createAllCharts(data) {
