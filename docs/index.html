@@ -371,6 +371,39 @@
                         <canvas id="riskAnalysisChart"></canvas>
                     </div>
                 </div>
+
+                <!-- Fraud Detection Efficiency -->
+                <div class="chart-container full-width">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Fraud Detection Efficiency Trends</h3>
+                        <p class="chart-subtitle">Precision tracking: confirmed fraud vs false positives over time</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="fraudEfficiencyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Weekly Patterns -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Weekly Application Patterns</h3>
+                        <p class="chart-subtitle">Volume and fraud rates by day of week</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="weeklyPatternsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Application Processing Funnel -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Application Processing Funnel</h3>
+                        <p class="chart-subtitle">Flow from submission to final decision</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="applicationFunnelChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -449,6 +482,9 @@
             createDailyTrendsChart(data);
             createFraudReasonsChart(data);
             createRiskAnalysisChart(data);
+            createFraudEfficiencyChart(data);
+            createWeeklyPatternsChart(data);
+            createApplicationFunnelChart(data);
         }
 
         function createStatusDistributionChart(data) {
@@ -866,6 +902,291 @@
                         },
                         x: {
                             grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createFraudEfficiencyChart(data) {
+            const ctx = document.getElementById('fraudEfficiencyChart').getContext('2d');
+            
+            // Use monthly data for cleaner visualization
+            const labels = data.monthly_trends.map(item => {
+                const date = new Date(item.month + '-01');
+                return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            });
+            
+            const confirmedFraud = data.monthly_trends.map(item => item.Confirmed_Fraud);
+            const falsePositives = data.monthly_trends.map(item => item.False_Positive);
+            
+            // Calculate precision (confirmed fraud / (confirmed fraud + false positives))
+            const precision = data.monthly_trends.map(item => {
+                const total = item.Confirmed_Fraud + item.False_Positive;
+                return total > 0 ? Number(((item.Confirmed_Fraud / total) * 100).toFixed(1)) : 0;
+            });
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Confirmed Fraud',
+                            data: confirmedFraud,
+                            backgroundColor: colors.danger,
+                            borderRadius: 4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'False Positives',
+                            data: falsePositives,
+                            backgroundColor: colors.warning,
+                            borderRadius: 4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Precision (%)',
+                            data: precision,
+                            type: 'line',
+                            borderColor: colors.success,
+                            backgroundColor: colors.success + '20',
+                            borderWidth: 3,
+                            fill: false,
+                            tension: 0.4,
+                            pointBackgroundColor: colors.success,
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Cases',
+                                font: { weight: 'bold' }
+                            },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Precision (%)',
+                                font: { weight: 'bold' }
+                            },
+                            grid: { display: false }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                afterBody: function(tooltipItems) {
+                                    const monthIndex = tooltipItems[0].dataIndex;
+                                    const precision = Number(((confirmedFraud[monthIndex] / (confirmedFraud[monthIndex] + falsePositives[monthIndex])) * 100).toFixed(1));
+                                    return `Model Precision: ${precision}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createWeeklyPatternsChart(data) {
+            const ctx = document.getElementById('weeklyPatternsChart').getContext('2d');
+            
+            // Group daily data by day of week
+            const weeklyData = {};
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            
+            // Initialize weekly data structure
+            daysOfWeek.forEach(day => {
+                weeklyData[day] = {
+                    totalApplications: 0,
+                    confirmedFraud: 0,
+                    count: 0
+                };
+            });
+            
+            // Process daily trends
+            data.daily_trends.forEach(day => {
+                const date = new Date(day.date);
+                const dayName = daysOfWeek[date.getDay()];
+                const totalApps = day.Pass + day.Fail + day.Confirmed_Fraud + 
+                                 day.Manual_Review + day.Manual_Review_No_Case + day.False_Positive;
+                
+                weeklyData[dayName].totalApplications += totalApps;
+                weeklyData[dayName].confirmedFraud += day.Confirmed_Fraud;
+                weeklyData[dayName].count += 1;
+            });
+            
+            // Calculate averages and fraud rates
+            const avgApplications = daysOfWeek.map(day => 
+                weeklyData[day].count > 0 ? Math.round(weeklyData[day].totalApplications / weeklyData[day].count) : 0
+            );
+            
+            const fraudRates = daysOfWeek.map(day => {
+                const total = weeklyData[day].totalApplications;
+                return total > 0 ? Number(((weeklyData[day].confirmedFraud / total) * 100).toFixed(2)) : 0;
+            });
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: daysOfWeek,
+                    datasets: [
+                        {
+                            label: 'Avg Daily Applications',
+                            data: avgApplications,
+                            backgroundColor: colors.primary + '80',
+                            borderColor: colors.primary,
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Fraud Rate (%)',
+                            data: fraudRates,
+                            type: 'line',
+                            borderColor: colors.danger,
+                            backgroundColor: colors.danger + '20',
+                            borderWidth: 3,
+                            fill: false,
+                            tension: 0.4,
+                            pointBackgroundColor: colors.danger,
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Avg Applications',
+                                font: { weight: 'bold' }
+                            },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Fraud Rate (%)',
+                                font: { weight: 'bold' }
+                            },
+                            grid: { display: false }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createApplicationFunnelChart(data) {
+            const ctx = document.getElementById('applicationFunnelChart').getContext('2d');
+            
+            // Calculate funnel stages from model performance data
+            const totalApplications = data.summary.total_applications;
+            
+            // Calculate automated decisions (pass + reject without review)
+            const passDecisions = data.model_performance.find(item => item.model_result === 'fraud_pass');
+            const rejectDecisions = data.model_performance.find(item => item.model_result === 'fraud_reject');
+            const declineDecisions = data.model_performance.find(item => item.model_result === 'fraud_decline');
+            
+            const automatedDecisions = (passDecisions?.Pass || 0) + (rejectDecisions?.Fail || 0) + (declineDecisions?.Fail || 0);
+            
+            // Calculate manual review queue
+            const reviewDecisions = data.model_performance.find(item => item.model_result === 'fraud_review');
+            const reviewNoCaseDecisions = data.model_performance.find(item => item.model_result === 'fraud_review_no_case');
+            
+            const manualReviewQueue = (reviewDecisions?.Manual_Review || 0) + 
+                                    (reviewNoCaseDecisions?.Manual_Review_No_Case || 0) +
+                                    (reviewDecisions?.Pass || 0) + (reviewDecisions?.Confirmed_Fraud || 0) +
+                                    (reviewDecisions?.False_Positive || 0);
+            
+            // Final decisions
+            const finalApproved = data.summary.total_applications * (data.summary.pass_rate / 100);
+            const finalRejected = data.summary.total_applications * (data.summary.fraud_rate / 100);
+
+            const funnelData = [
+                { stage: 'Total Applications', count: totalApplications, color: colors.info },
+                { stage: 'Automated Decisions', count: automatedDecisions, color: colors.success },
+                { stage: 'Manual Review Queue', count: manualReviewQueue, color: colors.warning },
+                { stage: 'Final Approved', count: Math.round(finalApproved), color: colors.success },
+                { stage: 'Final Rejected', count: Math.round(finalRejected), color: colors.danger }
+            ];
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: funnelData.map(item => item.stage),
+                    datasets: [{
+                        label: 'Applications',
+                        data: funnelData.map(item => item.count),
+                        backgroundColor: funnelData.map(item => item.color),
+                        borderRadius: 4,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { color: '#f1f5f9' }
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const percentage = ((context.parsed.x / totalApplications) * 100).toFixed(1);
+                                    return `${percentage}% of total applications`;
+                                }
+                            }
                         }
                     }
                 }
