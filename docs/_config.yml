@@ -1,0 +1,30 @@
+theme: jekyll-theme-minimal
+title: Fraud Analysis Dashboard
+description: Interactive dashboard for fraud detection analysis and model performance monitoring
+show_downloads: false
+google_analytics: # Add your Google Analytics ID here if needed
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - README.md
+  - index.html
+  - dashboard_data.json
+
+exclude:
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

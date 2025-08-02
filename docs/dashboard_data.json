@@ -1,0 +1,1017 @@
+{
+  "summary": {
+    "total_applications": 46258,
+    "fraud_rate": 6.06,
+    "pass_rate": 47.02,
+    "manual_review_rate": 38.89,
+    "false_positive_rate": 1.11
+  },
+  "daily_trends": [
+    {
+      "date": "2025-01-01",
+      "Pass": 0,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 1
+    },
+    {
+      "date": "2025-01-02",
+      "Pass": 1,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-03",
+      "Pass": 1,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-05",
+      "Pass": 1,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 2,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-06",
+      "Pass": 4,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 1,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-07",
+      "Pass": 2,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 1,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-08",
+      "Pass": 3,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-09",
+      "Pass": 2,
+      "Fail": 0,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-11",
+      "Pass": 5,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-12",
+      "Pass": 2,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 1,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 1
+    },
+    {
+      "date": "2025-01-13",
+      "Pass": 7,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 1,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-14",
+      "Pass": 7,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-01-15",
+      "Pass": 201,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 62,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-01-16",
+      "Pass": 415,
+      "Fail": 4,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 4,
+      "Manual_Review_No_Case": 125,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-01-17",
+      "Pass": 321,
+      "Fail": 2,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 160,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-01-18",
+      "Pass": 277,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 45,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-01-19",
+      "Pass": 226,
+      "Fail": 1,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 49,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-01-20",
+      "Pass": 256,
+      "Fail": 1,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 3,
+      "Manual_Review_No_Case": 67,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-01-21",
+      "Pass": 354,
+      "Fail": 2,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 304,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-01-22",
+      "Pass": 331,
+      "Fail": 2,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 239,
+      "False_Positive": 15
+    },
+    {
+      "date": "2025-01-23",
+      "Pass": 361,
+      "Fail": 4,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 188,
+      "False_Positive": 11
+    },
+    {
+      "date": "2025-01-24",
+      "Pass": 304,
+      "Fail": 3,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 184,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-01-25",
+      "Pass": 297,
+      "Fail": 1,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 12,
+      "Manual_Review_No_Case": 56,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-01-26",
+      "Pass": 246,
+      "Fail": 4,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 70,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-01-27",
+      "Pass": 277,
+      "Fail": 9,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 89,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-01-28",
+      "Pass": 283,
+      "Fail": 1,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 69,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-01-29",
+      "Pass": 277,
+      "Fail": 4,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 13,
+      "Manual_Review_No_Case": 112,
+      "False_Positive": 10
+    },
+    {
+      "date": "2025-01-30",
+      "Pass": 315,
+      "Fail": 1,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 83,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-01-31",
+      "Pass": 308,
+      "Fail": 2,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 95,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-02-01",
+      "Pass": 247,
+      "Fail": 1,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 57,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-02-02",
+      "Pass": 234,
+      "Fail": 2,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 60,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-02-03",
+      "Pass": 284,
+      "Fail": 2,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 87,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-02-04",
+      "Pass": 336,
+      "Fail": 2,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 74,
+      "False_Positive": 14
+    },
+    {
+      "date": "2025-02-05",
+      "Pass": 332,
+      "Fail": 0,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 14,
+      "Manual_Review_No_Case": 110,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-02-06",
+      "Pass": 314,
+      "Fail": 1,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 83,
+      "False_Positive": 10
+    },
+    {
+      "date": "2025-02-07",
+      "Pass": 307,
+      "Fail": 2,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 78,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-02-08",
+      "Pass": 248,
+      "Fail": 1,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 69,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-02-09",
+      "Pass": 234,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 3,
+      "Manual_Review_No_Case": 44,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-02-10",
+      "Pass": 276,
+      "Fail": 1,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 73,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-02-11",
+      "Pass": 290,
+      "Fail": 2,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 86,
+      "False_Positive": 14
+    },
+    {
+      "date": "2025-02-12",
+      "Pass": 325,
+      "Fail": 5,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 12,
+      "Manual_Review_No_Case": 97,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-02-13",
+      "Pass": 264,
+      "Fail": 3,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 11,
+      "Manual_Review_No_Case": 72,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-02-14",
+      "Pass": 245,
+      "Fail": 5,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 65,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-02-15",
+      "Pass": 218,
+      "Fail": 0,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 5,
+      "Manual_Review_No_Case": 42,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-02-16",
+      "Pass": 204,
+      "Fail": 2,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 35,
+      "False_Positive": 11
+    },
+    {
+      "date": "2025-02-17",
+      "Pass": 278,
+      "Fail": 5,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 70,
+      "False_Positive": 15
+    },
+    {
+      "date": "2025-02-18",
+      "Pass": 333,
+      "Fail": 1,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 12,
+      "Manual_Review_No_Case": 77,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-02-19",
+      "Pass": 313,
+      "Fail": 1,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 86,
+      "False_Positive": 10
+    },
+    {
+      "date": "2025-02-20",
+      "Pass": 294,
+      "Fail": 3,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 78,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-02-21",
+      "Pass": 254,
+      "Fail": 9,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 42,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-02-22",
+      "Pass": 220,
+      "Fail": 2,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 3,
+      "Manual_Review_No_Case": 32,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-02-23",
+      "Pass": 231,
+      "Fail": 0,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 37,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-02-24",
+      "Pass": 280,
+      "Fail": 7,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 76,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-02-25",
+      "Pass": 285,
+      "Fail": 7,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 4,
+      "Manual_Review_No_Case": 92,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-02-26",
+      "Pass": 261,
+      "Fail": 5,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 5,
+      "Manual_Review_No_Case": 52,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-02-27",
+      "Pass": 293,
+      "Fail": 3,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 65,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-02-28",
+      "Pass": 354,
+      "Fail": 10,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 63,
+      "False_Positive": 2
+    },
+    {
+      "date": "2025-03-01",
+      "Pass": 237,
+      "Fail": 4,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 2,
+      "Manual_Review_No_Case": 43,
+      "False_Positive": 7
+    },
+    {
+      "date": "2025-03-02",
+      "Pass": 249,
+      "Fail": 6,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 4,
+      "Manual_Review_No_Case": 34,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-03",
+      "Pass": 283,
+      "Fail": 9,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 115,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-03-04",
+      "Pass": 288,
+      "Fail": 10,
+      "Confirmed_Fraud": 6,
+      "Manual_Review": 5,
+      "Manual_Review_No_Case": 262,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-05",
+      "Pass": 314,
+      "Fail": 12,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 552,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-03-06",
+      "Pass": 308,
+      "Fail": 10,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 1312,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-07",
+      "Pass": 253,
+      "Fail": 5,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 15,
+      "Manual_Review_No_Case": 73,
+      "False_Positive": 0
+    },
+    {
+      "date": "2025-03-08",
+      "Pass": 212,
+      "Fail": 20,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 1113,
+      "False_Positive": 1
+    },
+    {
+      "date": "2025-03-09",
+      "Pass": 207,
+      "Fail": 96,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 1,
+      "Manual_Review_No_Case": 5511,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-10",
+      "Pass": 305,
+      "Fail": 5,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 8,
+      "Manual_Review_No_Case": 125,
+      "False_Positive": 13
+    },
+    {
+      "date": "2025-03-11",
+      "Pass": 310,
+      "Fail": 44,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 4,
+      "Manual_Review_No_Case": 2609,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-03-12",
+      "Pass": 283,
+      "Fail": 59,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 10,
+      "Manual_Review_No_Case": 121,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-03-13",
+      "Pass": 295,
+      "Fail": 6,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 14,
+      "Manual_Review_No_Case": 134,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-14",
+      "Pass": 247,
+      "Fail": 8,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 60,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-03-15",
+      "Pass": 213,
+      "Fail": 1002,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 2,
+      "Manual_Review_No_Case": 39,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-03-16",
+      "Pass": 198,
+      "Fail": 3,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 57,
+      "False_Positive": 2
+    },
+    {
+      "date": "2025-03-17",
+      "Pass": 227,
+      "Fail": 7,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 95,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-18",
+      "Pass": 293,
+      "Fail": 8,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 4,
+      "Manual_Review_No_Case": 107,
+      "False_Positive": 13
+    },
+    {
+      "date": "2025-03-19",
+      "Pass": 321,
+      "Fail": 5,
+      "Confirmed_Fraud": 2155,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 86,
+      "False_Positive": 11
+    },
+    {
+      "date": "2025-03-20",
+      "Pass": 320,
+      "Fail": 1553,
+      "Confirmed_Fraud": 510,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 88,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-03-21",
+      "Pass": 317,
+      "Fail": 2,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 73,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-03-22",
+      "Pass": 293,
+      "Fail": 121,
+      "Confirmed_Fraud": 3,
+      "Manual_Review": 3,
+      "Manual_Review_No_Case": 45,
+      "False_Positive": 3
+    },
+    {
+      "date": "2025-03-23",
+      "Pass": 243,
+      "Fail": 7,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 61,
+      "False_Positive": 5
+    },
+    {
+      "date": "2025-03-24",
+      "Pass": 339,
+      "Fail": 4,
+      "Confirmed_Fraud": 2,
+      "Manual_Review": 9,
+      "Manual_Review_No_Case": 97,
+      "False_Positive": 6
+    },
+    {
+      "date": "2025-03-25",
+      "Pass": 345,
+      "Fail": 21,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 102,
+      "False_Positive": 10
+    },
+    {
+      "date": "2025-03-26",
+      "Pass": 339,
+      "Fail": 7,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 110,
+      "False_Positive": 8
+    },
+    {
+      "date": "2025-03-27",
+      "Pass": 419,
+      "Fail": 13,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 12,
+      "Manual_Review_No_Case": 120,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-03-28",
+      "Pass": 348,
+      "Fail": 9,
+      "Confirmed_Fraud": 4,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 107,
+      "False_Positive": 9
+    },
+    {
+      "date": "2025-03-29",
+      "Pass": 286,
+      "Fail": 7,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 7,
+      "Manual_Review_No_Case": 66,
+      "False_Positive": 4
+    },
+    {
+      "date": "2025-03-30",
+      "Pass": 266,
+      "Fail": 5,
+      "Confirmed_Fraud": 1,
+      "Manual_Review": 12,
+      "Manual_Review_No_Case": 62,
+      "False_Positive": 2
+    },
+    {
+      "date": "2025-03-31",
+      "Pass": 355,
+      "Fail": 10,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 6,
+      "Manual_Review_No_Case": 109,
+      "False_Positive": 4
+    }
+  ],
+  "monthly_trends": [
+    {
+      "month": "2025-01",
+      "Pass": 5084,
+      "Fail": 41,
+      "Confirmed_Fraud": 30,
+      "Manual_Review": 147,
+      "Manual_Review_No_Case": 1997,
+      "False_Positive": 124
+    },
+    {
+      "month": "2025-02",
+      "Pass": 7754,
+      "Fail": 82,
+      "Confirmed_Fraud": 51,
+      "Manual_Review": 229,
+      "Manual_Review_No_Case": 1902,
+      "False_Positive": 207
+    },
+    {
+      "month": "2025-03",
+      "Pass": 8913,
+      "Fail": 3078,
+      "Confirmed_Fraud": 2724,
+      "Manual_Review": 225,
+      "Manual_Review_No_Case": 13488,
+      "False_Positive": 182
+    }
+  ],
+  "model_performance": [
+    {
+      "model_result": "fraud_decline",
+      "Pass": 0,
+      "Fail": 56,
+      "Confirmed_Fraud": 0,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "model_result": "fraud_pass",
+      "Pass": 21548,
+      "Fail": 0,
+      "Confirmed_Fraud": 2681,
+      "Manual_Review": 3,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 16
+    },
+    {
+      "model_result": "fraud_reject",
+      "Pass": 0,
+      "Fail": 2982,
+      "Confirmed_Fraud": 5,
+      "Manual_Review": 0,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 0
+    },
+    {
+      "model_result": "fraud_review",
+      "Pass": 28,
+      "Fail": 0,
+      "Confirmed_Fraud": 114,
+      "Manual_Review": 596,
+      "Manual_Review_No_Case": 0,
+      "False_Positive": 486
+    },
+    {
+      "model_result": "fraud_review_no_case",
+      "Pass": 1,
+      "Fail": 162,
+      "Confirmed_Fraud": 5,
+      "Manual_Review": 2,
+      "Manual_Review_No_Case": 15349,
+      "False_Positive": 11
+    }
+  ],
+  "behavior_scores": [
+    {
+      "score": 0.0,
+      "count": 24868
+    },
+    {
+      "score": 10.0,
+      "count": 78
+    },
+    {
+      "score": 20.0,
+      "count": 582
+    },
+    {
+      "score": 30.0,
+      "count": 1
+    },
+    {
+      "score": 40.0,
+      "count": 221
+    },
+    {
+      "score": 50.0,
+      "count": 5831
+    },
+    {
+      "score": 60.0,
+      "count": 19
+    },
+    {
+      "score": 80.0,
+      "count": 1776
+    },
+    {
+      "score": 100.0,
+      "count": 997
+    }
+  ],
+  "device_scores": [
+    {
+      "score": 0.0,
+      "count": 1328
+    },
+    {
+      "score": 0.12,
+      "count": 7
+    },
+    {
+      "score": 0.24,
+      "count": 1
+    },
+    {
+      "score": 1.43,
+      "count": 18
+    },
+    {
+      "score": 2.98,
+      "count": 1
+    },
+    {
+      "score": 10.0,
+      "count": 83
+    },
+    {
+      "score": 20.0,
+      "count": 1490
+    },
+    {
+      "score": 22.55,
+      "count": 1
+    },
+    {
+      "score": 25.0,
+      "count": 20196
+    },
+    {
+      "score": 30.0,
+      "count": 2129
+    },
+    {
+      "score": 40.0,
+      "count": 5529
+    },
+    {
+      "score": 50.0,
+      "count": 2434
+    },
+    {
+      "score": 80.0,
+      "count": 159
+    },
+    {
+      "score": 100.0,
+      "count": 997
+    }
+  ],
+  "fraud_reasons": [
+    {
+      "reason": "D&BAPI Fail",
+      "count": 9602
+    },
+    {
+      "reason": "vpn_review",
+      "count": 5272
+    },
+    {
+      "reason": "device_behavior_score_low",
+      "count": 2924
+    },
+    {
+      "reason": "device_and_behavior_suspicious_behavior_review",
+      "count": 1573
+    },
+    {
+      "reason": "device_and_behavior_distance_review",
+      "count": 863
+    },
+    {
+      "reason": "device_and_behevior_review_score",
+      "count": 462
+    },
+    {
+      "reason": "IP_velocity_spike",
+      "count": 154
+    },
+    {
+      "reason": "deviceDetectionId_velocity",
+      "count": 122
+    },
+    {
+      "reason": "DIT_decision",
+      "count": 118
+    },
+    {
+      "reason": "review_phone_velocity_all_time",
+      "count": 97
+    }
+  ]
+}
