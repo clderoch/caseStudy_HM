@@ -1013,5 +1013,38 @@
       "reason": "review_phone_velocity_all_time",
       "count": 97
     }
-  ]
-}
+  ],
+  "model_accuracy": [
+    {
+      "model_result": "fraud_pass",
+      "accuracy": 88.9,
+      "total_cases": 24248
+    },
+    {
+      "model_result": "fraud_reject",
+      "accuracy": 99.8,
+      "total_cases": 2987
+    },
+    {
+      "model_result": "fraud_review_no_case",
+      "accuracy": 50.0,
+      "total_cases": 15530
+    },
+    {
+      "model_result": "fraud_review",
+      "accuracy": 58.0,
+      "total_cases": 1224
+    },
+    {
+      "model_result": "fraud_decline",
+      "accuracy": 50.0,
+      "total_cases": 56
+    }
+  ],
+  "daily_fraud_detailed": [
+    {
+      "date": "2025-01-01",
+      "fraud_rate": 0.0,
+      "rolling_avg": 0.0,
+      "total_applications": 1,
+      "confirmed_fraud": 
