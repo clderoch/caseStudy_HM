@@ -1,4 +1,4 @@
-# 🛡️ Fraud Analysis Dashboard - Complete Setup
+# 🪙 Jolly Dollars Fraud Dashboard - Complete Setup
 
 ## 📊 Dashboard Overview
 
@@ -54,7 +54,7 @@ I've successfully created a comprehensive, interactive fraud analysis dashboard 
 1. **Push to GitHub**:
    ```bash
    git add .
-   git commit -m "Add fraud analysis dashboard"
+   git commit -m "Add Jolly Dollars fraud dashboard"
    git push origin main
    ```
 
@@ -157,7 +157,7 @@ This dashboard provides immediate value for fraud analysis:
 
 ---
 
-**🎉 Your fraud analysis dashboard is ready for production deployment!**
+**🎉 Your Jolly Dollars fraud dashboard is ready for production deployment!**
 
 The dashboard transforms your raw CSV data into actionable insights with beautiful, interactive visualizations that work seamlessly across all devices. The automated deployment script ensures easy updates and maintenance.
 

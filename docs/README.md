@@ -1,4 +1,4 @@
-# Fraud Analysis Dashboard
+# Jolly Dollars Fraud Dashboard
 
 A comprehensive, interactive dashboard for analyzing fraud detection patterns and model performance.
 

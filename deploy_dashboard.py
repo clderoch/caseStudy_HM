@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fraud Analysis Dashboard Deployment Script
+Jolly Dollars Fraud Dashboard Deployment Script
 
 This script prepares the dashboard for GitHub Pages deployment by:
 1. Generating the latest dashboard data
@@ -207,7 +207,7 @@ def display_setup_instructions():
 
 def main():
     """Main deployment function."""
-    print("🛡️ Fraud Analysis Dashboard Deployment")
+    print("🪙 Jolly Dollars Fraud Dashboard Deployment")
     print("="*50)
     print()
     
